@@ -16,3 +16,9 @@ docker/http/.zshrc
 !/opencart/system/cache/index.html
 /opencart/system/logs/*
 !/opencart/system/logs/index.html
+
+# Ignore uploads
+/opencart/image/catalog/*
+!/opencart/image/catalog/index.html
+/opencart/system/download/*
+!/opencart/system/download/index.html
