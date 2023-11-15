@@ -22,3 +22,8 @@ docker/http/.zshrc
 !/opencart/image/catalog/index.html
 /opencart/system/download/*
 !/opencart/system/download/index.html
+
+# vqmod cache
+/opencart/vqmod/*.cache
+/opencart/vqmod/vqcache/*
+!/opencart/vqmod/vqcache/index.html
