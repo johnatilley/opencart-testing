@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
     http:
-        container_name: opencartlearning_http
+        container_name: opencarttesting_http
         platform: ${DOCKER_PLATFORM:-linux/amd64}
         build:
             context: .
@@ -14,9 +14,9 @@ services:
         volumes:
             - ./opencart:/var/www/html/
         networks:
-            - opencartlearning_network
+            - opencarttesting_network
     mysql:
-        container_name: opencartlearning_mysql
+        container_name: opencarttesting_mysql
         platform: ${DOCKER_PLATFORM:-linux/amd64}
         image: mysql:5.7
         ports:
@@ -29,9 +29,9 @@ services:
         volumes:
             - ./data/mysql:/var/lib/mysql
         networks:
-            - opencartlearning_network
+            - opencarttesting_network
     phpmyadmin:
-        container_name: opencartlearning_phpmyadmin
+        container_name: opencarttesting_phpmyadmin
         platform: ${DOCKER_PLATFORM:-linux/amd64}
         image: phpmyadmin:5.2.1
         ports:
@@ -42,7 +42,7 @@ services:
             PMA_PASSWORD: ${MYSQL_PASSWORD}
             UPLOAD_LIMIT: 300M
     mailhog:
-        container_name: opencartlearning_mailhog
+        container_name: opencarttesting_mailhog
         platform: ${DOCKER_PLATFORM:-linux/amd64}
         image: mailhog/mailhog
         logging:
@@ -51,7 +51,7 @@ services:
             - ${FORWARD_MAILHOG_SMTP_PORT:-1025}:1025
             - ${FORWARD_MAILHOG_WEB_PORT:-8025}:8025
         networks:
-            - opencartlearning_network
+            - opencarttesting_network
 networks:
-    opencartlearning_network:
+    opencarttesting_network:
         driver: bridge

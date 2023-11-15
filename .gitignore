@@ -4,3 +4,7 @@ docker/http/.zshrc
 
 # Ignore installation files
 /opencart/install
+
+# Ignore config files
+opencart/config.php
+opencart/admin/config.php
