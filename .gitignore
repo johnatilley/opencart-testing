@@ -1,3 +1,6 @@
 .env
 data
 docker/http/.zshrc
+
+# Ignore installation files
+/opencart/install
